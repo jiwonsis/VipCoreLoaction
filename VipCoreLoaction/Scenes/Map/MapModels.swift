@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 enum Map {
     // MARK: Use cases
@@ -30,6 +31,43 @@ enum Map {
             var success: Bool
             var errorTitle: String?
             var errorMessage: String?
+        }
+    }
+    
+    enum GetCurrentLocation {
+        struct Request {
+            var mapView: MKMapView
+        }
+        struct Response {
+            var success: Bool
+            var error: NSError?
+        }
+        struct ViewModel {
+            var success: Bool
+            var errorTitle: String?
+            var errorMessage: String?
+        } 
+    }
+    
+    enum CenterMap {
+        struct Request {
+        }
+        struct Response {
+            var coordinate: CLLocationCoordinate2D
+        }
+        struct ViewModel {
+            var coordinate: CLLocationCoordinate2D
+        }
+    }
+    
+    enum GetCurrentAddress {
+        struct Request {
+        }
+        struct Response {
+            var success: Bool
+        }
+        struct ViewModel {
+            var success: Bool
         }
     }
 }

@@ -12,6 +12,9 @@ import MapKit
 protocol MapDisplayLogic: class {
     func displaySomething(viewModel: Map.Something.ViewModel)
     func displayRequestForCurrentLocation(viewModel: Map.RequestFromCurrentLocation.ViewModel)
+    func displayGetCurrentLocation(viewModel: Map.GetCurrentLocation.ViewModel)
+    func displayCenterMap(viewModel: Map.CenterMap.ViewModel)
+    func displayGetCurrentAddress(viewModel: Map.GetCurrentAddress.ViewModel)
 }
 
 class MapViewController: UIViewController, MapDisplayLogic {
@@ -91,6 +94,7 @@ class MapViewController: UIViewController, MapDisplayLogic {
     func displayRequestForCurrentLocation(viewModel: Map.RequestFromCurrentLocation.ViewModel) {
         if viewModel.success {
             mapView.showsUserLocation = true
+            getCurrentLocation()
         } else {
             showAlert(title: viewModel.errorTitle!, message: viewModel.errorMessage!)
         }
@@ -102,4 +106,43 @@ class MapViewController: UIViewController, MapDisplayLogic {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    // MARK: Get Current Location
+    
+    func getCurrentLocation() {
+        let request = Map.GetCurrentLocation.Request(mapView: mapView)
+        interactor?.getCurrentLocation(request: request)
+    }
+    
+    func displayGetCurrentLocation(viewModel: Map.GetCurrentLocation.ViewModel) {
+        if viewModel.success {
+            centerMap()
+            getCurrentAddress()
+        } else {
+            showAlert(title: viewModel.errorTitle!, message: viewModel.errorMessage!)
+        }
+    }
+    
+    // MARK: Center Map
+    
+    func centerMap() {
+        let request = Map.CenterMap.Request()
+        interactor?.centerMap(request: request)
+    }
+    
+    func displayCenterMap(viewModel: Map.CenterMap.ViewModel) {
+        mapView.setCenter(viewModel.coordinate, animated: true)
+    }
+    
+    // MARK: Get Current Address
+    
+    func getCurrentAddress(){
+        let request = Map.GetCurrentAddress.Request()
+        interactor?.getCurrentAddress(request: request)
+    }
+    
+    func displayGetCurrentAddress(viewModel: Map.GetCurrentAddress.ViewModel) {
+        getAddressButton.isEnabled = viewModel.success
+    }
 }
+
