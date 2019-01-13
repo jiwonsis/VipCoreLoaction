@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+NSLocationWhenInUseUsageDescription = "Location is needed to get your current address";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Location is needed to get your current address";
