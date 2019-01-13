@@ -47,6 +47,7 @@
 		292DFD1E21EB80D20031C0C5 /* VipCoreLoactionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VipCoreLoactionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		292DFD2221EB80D20031C0C5 /* VipCoreLoactionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipCoreLoactionUITests.swift; sourceTree = "<group>"; };
 		292DFD2421EB80D20031C0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292DFD3021EB816C0031C0C5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		292DFCF621EB80D10031C0C5 = {
 			isa = PBXGroup;
 			children = (
+				292DFD3021EB816C0031C0C5 /* README.md */,
 				292DFD0121EB80D10031C0C5 /* VipCoreLoaction */,
 				292DFD1621EB80D20031C0C5 /* VipCoreLoactionTests */,
 				292DFD2121EB80D20031C0C5 /* VipCoreLoactionUITests */,
