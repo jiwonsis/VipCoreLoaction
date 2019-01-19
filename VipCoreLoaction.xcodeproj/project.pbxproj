@@ -20,6 +20,12 @@
 		292DFD3E21EB821C0031C0C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DFD3821EB821C0031C0C5 /* MapViewController.swift */; };
 		292DFD3F21EB821C0031C0C5 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DFD3921EB821C0031C0C5 /* MapInteractor.swift */; };
 		292DFD4121EB86550031C0C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 292DFD4021EB86550031C0C5 /* InfoPlist.strings */; };
+		2981B93F21F345480055243B /* PlacemarkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93921F345480055243B /* PlacemarkPresenter.swift */; };
+		2981B94021F345480055243B /* PlacemarkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93A21F345480055243B /* PlacemarkWorker.swift */; };
+		2981B94121F345480055243B /* PlacemarkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93B21F345480055243B /* PlacemarkRouter.swift */; };
+		2981B94221F345480055243B /* PlacemarkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93C21F345480055243B /* PlacemarkModels.swift */; };
+		2981B94321F345480055243B /* PlacemarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93D21F345480055243B /* PlacemarkViewController.swift */; };
+		2981B94421F345480055243B /* PlacemarkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B93E21F345480055243B /* PlacemarkInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,12 @@
 		292DFD3821EB821C0031C0C5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		292DFD3921EB821C0031C0C5 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		292DFD4021EB86550031C0C5 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		2981B93921F345480055243B /* PlacemarkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkPresenter.swift; sourceTree = "<group>"; };
+		2981B93A21F345480055243B /* PlacemarkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkWorker.swift; sourceTree = "<group>"; };
+		2981B93B21F345480055243B /* PlacemarkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkRouter.swift; sourceTree = "<group>"; };
+		2981B93C21F345480055243B /* PlacemarkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkModels.swift; sourceTree = "<group>"; };
+		2981B93D21F345480055243B /* PlacemarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkViewController.swift; sourceTree = "<group>"; };
+		2981B93E21F345480055243B /* PlacemarkInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				292DFD3321EB82090031C0C5 /* Map */,
+				2981B93821F345290055243B /* Placemark */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -167,6 +180,19 @@
 				292DFD3921EB821C0031C0C5 /* MapInteractor.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		2981B93821F345290055243B /* Placemark */ = {
+			isa = PBXGroup;
+			children = (
+				2981B93921F345480055243B /* PlacemarkPresenter.swift */,
+				2981B93A21F345480055243B /* PlacemarkWorker.swift */,
+				2981B93B21F345480055243B /* PlacemarkRouter.swift */,
+				2981B93C21F345480055243B /* PlacemarkModels.swift */,
+				2981B93D21F345480055243B /* PlacemarkViewController.swift */,
+				2981B93E21F345480055243B /* PlacemarkInteractor.swift */,
+			);
+			path = Placemark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +330,16 @@
 				292DFD0321EB80D10031C0C5 /* AppDelegate.swift in Sources */,
 				292DFD3E21EB821C0031C0C5 /* MapViewController.swift in Sources */,
 				292DFD3C21EB821C0031C0C5 /* MapRouter.swift in Sources */,
+				2981B94021F345480055243B /* PlacemarkWorker.swift in Sources */,
+				2981B93F21F345480055243B /* PlacemarkPresenter.swift in Sources */,
+				2981B94121F345480055243B /* PlacemarkRouter.swift in Sources */,
 				292DFD3A21EB821C0031C0C5 /* MapPresenter.swift in Sources */,
+				2981B94321F345480055243B /* PlacemarkViewController.swift in Sources */,
 				292DFD3D21EB821C0031C0C5 /* MapModels.swift in Sources */,
+				2981B94221F345480055243B /* PlacemarkModels.swift in Sources */,
 				292DFD3F21EB821C0031C0C5 /* MapInteractor.swift in Sources */,
 				292DFD3B21EB821C0031C0C5 /* MapWorker.swift in Sources */,
+				2981B94421F345480055243B /* PlacemarkInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

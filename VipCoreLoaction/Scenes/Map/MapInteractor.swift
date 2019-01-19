@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Contacts
 
 protocol MapBusinessLogic {
     func doSomething(request: Map.Something.Request)
@@ -20,6 +21,7 @@ protocol MapBusinessLogic {
 
 protocol MapDataStore {
     //var name: String { get set }
+    var placemark: MKPlacemark? { get }
 }
 
 class MapInteractor: NSObject, MapBusinessLogic, MapDataStore, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -31,7 +33,7 @@ class MapInteractor: NSObject, MapBusinessLogic, MapDataStore, CLLocationManager
     let geocoder = CLGeocoder()
     var centerMapFirstTime = false
     var currentLocation: MKUserLocation?
-    var placeMark: CLPlacemark?
+    var placemark: MKPlacemark?
     
     // MARK: Do something
   
@@ -102,7 +104,10 @@ class MapInteractor: NSObject, MapBusinessLogic, MapDataStore, CLLocationManager
             geocoder.reverseGeocodeLocation(location) { (placeMarks, error) in
                 var response: Map.GetCurrentAddress.Response
                 if let placeMark = placeMarks?.first {
-                    self.placeMark = placeMark
+                    if let postalAddress = placeMark.postalAddress, let coordinate = placeMark.location?.coordinate {
+                        self.placemark = MKPlacemark(coordinate: coordinate, postalAddress: postalAddress)
+                    }
+                    
                     response = Map.GetCurrentAddress.Response(success: true)
                 } else {
                     response = Map.GetCurrentAddress.Response(success: false)

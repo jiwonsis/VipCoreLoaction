@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol MapRoutingLogic {
     //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToPlacemark(segue: UIStoryboardSegue?)
 }
 
 protocol MapDataPassing {
@@ -35,6 +36,14 @@ class MapRouter: NSObject, MapRoutingLogic, MapDataPassing {
     //         navigateToSomewhere(source: viewController!, destination: destinationVC)
     //     }
     // }
+    
+    func routeToPlacemark(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! PlacemarkViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToPlacemark(source: dataStore!, destination: &destinationDS)
+        }
+    }
 
     // MARK: Navigation
   
@@ -47,4 +56,8 @@ class MapRouter: NSObject, MapRoutingLogic, MapDataPassing {
     // func passDataToSomewhere(source: MapDataStore, destination: inout SomewhereDataStore) {
     //     destination.name = source.name
     // }
+    
+    func passDataToPlacemark(source: MapDataStore, destination: inout PlacemarkDataStore) {
+        destination.placemark = source.placemark
+    }
 }
